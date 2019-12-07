@@ -1,17 +1,18 @@
 .app_wrapper {
+    padding: 0;
     margin: 0 auto;
-    display: grid;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1em;
     width: 1280px;
 
-    grid-template-areas:
-            "header header"
-            "sidebar dashboard";
+    display: flex;
+    flex-flow: row wrap;
+    align-items: start;
+}
 
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 3fr 10fr;
-
-    box-sizing: border-box;
-
+.app_wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
 }
 
 .app_wrapper:before {
