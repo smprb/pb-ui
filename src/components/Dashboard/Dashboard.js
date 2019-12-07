@@ -2,7 +2,9 @@ import React from "react";
 
 const dashboardStyle = {
     'grid-area': 'dashboard',
-    'background-color': 'white'
+    'background-color': 'white',
+    'border-bottom': '2px solid rgba(0,0,0,0.15)'
+
 };
 
 const Dashboard = () => {

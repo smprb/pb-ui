@@ -1,16 +1,17 @@
 .app_wrapper {
     margin: 0 auto;
     display: grid;
-    width: 1200px;
+    width: 1280px;
 
     grid-template-areas:
             "header header"
             "sidebar dashboard";
 
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 10fr;
 
     box-sizing: border-box;
+
 }
 
 .app_wrapper:before {

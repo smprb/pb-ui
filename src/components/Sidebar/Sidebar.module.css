@@ -4,5 +4,16 @@
 }
 
 .item {
+    margin-bottom: 10px;
     background-color: white;
+    text-align: center;
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.header {
+    padding: 20px;
+    padding-top: 0;
+    font-weight: bold;
 }
