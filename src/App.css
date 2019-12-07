@@ -3,10 +3,22 @@
     display: grid;
     width: 1200px;
 
-    grid-template-areas: "h h" "n c";
+    grid-template-areas:
+            "header header"
+            "sidebar dashboard";
 
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
 
     box-sizing: border-box;
+}
+
+.app_wrapper:before {
+    content:"";
+    background-color: #F1EFEA;
+    position: absolute;
+    height: 100%;
+    width: 4000px;
+    left: -1000px;
+    z-index: -1;
 }
