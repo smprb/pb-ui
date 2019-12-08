@@ -1,27 +1,17 @@
 import React from "react";
+import {ToDoList} from "./ToDoList";
+import styles from "./Dashboard.module.css";
 
 const dashboardStyle = {
+    'margin': '0 auto',
+    'padding': '0',
     'flex': '3 0px',
     'order': '2'
 };
 
-const item = {
-    'background-color': 'white',
-    'margin-bottom': '10px',
-    'border-bottom': '2px solid rgba(0,0,0,0.15)'
-}
-
-const ToDoList = () => {
-    return (
-        <div style={item}>
-            ToDoList
-        </div>
-    )
-}
-
 const Suggestion = () => {
     return(
-        <div style={item}>
+        <div className={styles.item}>
             Suggestion
         </div>
     )
@@ -29,7 +19,7 @@ const Suggestion = () => {
 
 const Plans = () => {
     return(
-        <div style={item}>
+        <div className={styles.item}>
             Plans
         </div>
     )
@@ -37,7 +27,7 @@ const Plans = () => {
 
 const Posts = () => {
     return(
-        <div style={item}>
+        <div className={styles.item}>
             Posts
         </div>
     )
