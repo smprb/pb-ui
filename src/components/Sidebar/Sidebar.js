@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './Sidebar.module.css';
 
-const userData = {
-    userName: "Murat Slavich",
-    userRegion: "Tomsk, Tomsk Oblast, Russian Federation"
-};
+const UserBox = (props) => {
 
-const UserBox = () => {
+    const userData = props.userData;
+
     return (
         <div className={styles.item}>
             <div className={styles.header}>
@@ -27,10 +25,13 @@ const ProfileBox = () => {
     )
 }
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+
+    let state = props.state;
+
     return (
         <div className={styles.sidebar}>
-            <UserBox />
+            <UserBox userData={state.userData}/>
             <ProfileBox />
         </div>
     )
