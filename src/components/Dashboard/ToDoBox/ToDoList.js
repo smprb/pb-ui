@@ -1,15 +1,6 @@
 import React from "react";
-import styles from './Dashboard.module.css'
-
-const TodoContent = () => {
-    return (
-        <div className={styles.content}>
-            <div className={styles.button}>
-                Add
-            </div>
-        </div>
-    )
-}
+import styles from '../Dashboard.module.css'
+import {TodoContent} from "./ToDoContent";
 
 export const ToDoList = () => {
     return (
@@ -19,7 +10,7 @@ export const ToDoList = () => {
                     To-Do List
                 </h1>
             </header>
-            <TodoContent />
+            <TodoContent/>
         </div>
     )
 }

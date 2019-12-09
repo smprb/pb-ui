@@ -1,24 +1,19 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar/Sidebar';
-import Dashboard from "./components/Dashboard/Dashboard";
+import Sidebar from './components/Sidebar';
+import Dashboard from "./components/Dashboard";
 
-const App = (props) => {
-
-    const state = props.store.getState();
-
+const App = () => {
     return (
         <div className='app_wrapper'>
 
-            <Header state={state}/>
-            <Sidebar state={state}/>
-            <Dashboard state={state}/>
+            <Header/>
+            <Sidebar/>
+            <Dashboard/>
 
         </div>
-
-
     )
 }
 
-export default App;
+export default App
