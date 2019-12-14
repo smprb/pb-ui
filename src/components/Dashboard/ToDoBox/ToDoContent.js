@@ -18,14 +18,18 @@ export const TodoContent = () => {
     //     dispatch({type: 'ADD'})
     // }
 
-    let useData;
-    api.get("/foo")
-        .then(response => useData = response.data);
-
     const [items, addItem] = useState([]);
 
+    let useData;
+
+     api.get("/api/foo")
+        .then(response => {
+            useData = response.data;
+            console.log(response)
+        });
+
     const addEntry = () => {
-        addItem(oldArray => [...oldArray, `${useData.field} ${oldArray.length}`])
+        addItem(oldArray => [...oldArray, `${useData.value} ${oldArray.length}`])
     };
 
     return (

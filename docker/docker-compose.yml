@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  backend:
+    image: test:0.1.1
+    ports:
+      - "8001:80"
+  ui:
+    image: test-ui:0.1.2
+    ports:
+      - "8080:80"
+    links:
+      - backend
