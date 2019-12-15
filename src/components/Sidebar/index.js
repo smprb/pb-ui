@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './Sidebar.module.css';
 import store from '../../store'
-import {ProfileBox} from "./ProfileBox";
-import {UserBox} from "./UserBox";
 
 const SideBar = () => {
 
@@ -10,8 +8,7 @@ const SideBar = () => {
 
     return (
         <div className={styles.sidebar}>
-            <UserBox userData={state.userData}/>
-            <ProfileBox />
+            Sidebar
         </div>
     )
 }
