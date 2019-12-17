@@ -8,6 +8,7 @@ RUN mkdir /build &&\
     mkdir /app &&\
     cp -R build/* /app &&\
     cd /app && rm -rf /build
+
 FROM nginx
 EXPOSE 80
 COPY --from=builder /app /usr/share/nginx/html
