@@ -7,9 +7,12 @@ const Brand = () => {
     </div>
 }
 
-const SidebarToggler = () => {
+const SidebarToggler = (props) => {
+    const {toggleSidebar, isSidebarShowing} = props;
+    const toggle = () => toggleSidebar(!isSidebarShowing);
+
     return <div>
-        <button className={styles.toggler}/>
+        <button className={styles.toggler} onClick={toggle}/>
     </div>
 }
 
@@ -27,10 +30,10 @@ const NavigationBar = () => {
     </div>
 }
 
-const Header = () => {
+const Header = (props) => {
     return <div className={styles.header}>
         <Brand />
-        <SidebarToggler />
+        <SidebarToggler toggleSidebar={props.toggleSidebar} isSidebarShowing={props.isSidebarShowing}/>
         <NavigationBar />
     </div>
 }
