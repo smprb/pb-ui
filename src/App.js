@@ -1,17 +1,22 @@
 import React from 'react';
-import './App.css';
+import './App.sass';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from "./components/Dashboard";
 
+const contentStyle = {
+    display: "flex",
+    flexDirection: "column"
+}
+
 const App = () => {
     return (
-        <div className='app_wrapper'>
-
+        <div>
             <Header/>
-            <Sidebar/>
-            <Dashboard/>
-
+            <div className={contentStyle}>
+                <Sidebar/>
+                <Dashboard/>
+            </div>
         </div>
     )
 }
