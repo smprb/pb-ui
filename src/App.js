@@ -1,17 +1,15 @@
 import React from 'react';
-import './App.css';
+import './App.sass';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from "./components/Dashboard";
 
 const App = () => {
     return (
-        <div className='app_wrapper'>
-
+        <div>
             <Header/>
             <Sidebar/>
             <Dashboard/>
-
         </div>
     )
 }

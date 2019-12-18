@@ -1,11 +1,7 @@
 import React from 'react';
-import styles from './Sidebar.module.css';
-import store from '../../store'
+import styles from './Sidebar.module.sass';
 
 const SideBar = () => {
-
-    let state = store.getState();
-
     return (
         <div className={styles.sidebar}>
             Sidebar

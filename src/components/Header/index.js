@@ -1,8 +1,10 @@
 import React from 'react';
-import s from './Header.module.css';
+import s from './Header.module.sass';
 
 const Header = () => {
-    return <header className={s.header} />
+    return <div className={s.header}>
+        Header
+    </div>
 }
 
 export default Header;
