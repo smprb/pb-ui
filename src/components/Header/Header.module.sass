@@ -1,6 +1,38 @@
+$toggler: 25px
+$topIntent: 15px
+
 .header
   height: 55px
   width: 100%
-  background: aquamarine
   position: fixed
   z-index: 1
+  background: #fff
+  border-bottom: 2px solid #c8ced3
+  display: flex
+
+.brand
+  padding-top: $topIntent
+  width: 200px - $toggler
+  text-align: center
+
+.toggler
+  all: unset
+  height: $toggler
+  width: $toggler
+  margin-top: $topIntent
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2373818f' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+  &:hover
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%232f353a' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+
+.navigation
+  padding-left: $topIntent
+  padding-top: $topIntent
+  display: flex
+  div
+    padding-left: 10px
+    padding-right: 10px
+    cursor: pointer
+
+
+
+
