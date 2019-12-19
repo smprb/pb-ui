@@ -1,24 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Sidebar.module.sass';
 
+const sidebarMenu = [
+    {name: "Проект",
+        items: [
+            {name: "Заголовок", link: ""},
+            {name: "Список продуктов", link: ""},
+            {name: "Текстовое описание", link: ""},
+            {name: "Отображение данных", link: ""},
+            {name: "Настройка расчета", link: ""},
+            {name: "Защита проекта", link: ""},
+        ]
+    },
+    {name: "Компания", items: [ {name: "Заголовок", link: ""} ]},
+    {name: "Окружение", items: [ {name: "Заголовок", link: ""} ]},
+    {name: "Инвестиционный план", items: [ {name: "Заголовок", link: ""} ]},
+    {name: "Операционный план", items: [ {name: "Заголовок", link: ""} ]},
+    {name: "Финансирование", items: [ {name: "Заголовок", link: ""} ]},
+    {name: "Результаты", items: [ {name: "Заголовок", link: ""} ]},
+    {name: "Анализ проекта", items: [ {name: "Заголовок", link: ""} ]},
+    {name: "Актуализация", items: [ {name: "Заголовок", link: ""} ]}
+]
+
 const Item = (props) => {
-    return <div className={styles.sidebarItem}>
-        {props.name}
+    const { name, items } = props.item;
+    const [isItemShowing, toggleItem] = useState(false);
+
+    return <div>
+        <div className={styles.sidebarItem} onClick={() => toggleItem(!isItemShowing)}>
+            {name}
+        </div>
+        {isItemShowing &&
+            items.map(it => <div className={styles.sidebarChildItem} children={it.name}/>)
+        }
     </div>
 }
 
 const SideBar = () => {
     return (
         <div className={styles.sidebar}>
-            <Item name="Проект"/>
-            <Item name="Компания"/>
-            <Item name="Окружение"/>
-            <Item name="Инвестиционный план"/>
-            <Item name="Операционный план"/>
-            <Item name="Финансирование"/>
-            <Item name="Результаты"/>
-            <Item name="Анализ проекта"/>
-            <Item name="Актуализация"/>
+            { sidebarMenu.map(it => <Item item={it}/>) }
         </div>
     )
 }
