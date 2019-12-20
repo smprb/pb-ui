@@ -7,12 +7,3 @@ ReactDOM.render(
     <App/>,
     document.getElementById('root')
 );
-
-const render = () => {
-    ReactDOM.render(
-        <App/>,
-        document.getElementById('root')
-    );
-}
-
-export default render;
