@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import styles from './Sidebar.module.sass';
 import {Link} from "react-router-dom";
 
-const Item = (props) => {
-    const { name, items, link } = props.item;
+const SidebarElement = (props) => {
+    const { name, items, link } = props.element;
     const [isItemShowing, toggleItem] = useState(false);
 
     return <div>
@@ -19,12 +19,22 @@ const Item = (props) => {
 }
 
 const SideBar = () => {
+    const isProjectOpened = true; // todo here needs global store
+
     return (
         <div className={styles.sidebar}>
-            { sidebarMenu.map(it => <Item item={it}/>) }
+            {isProjectOpened
+                ? sidebarMenu.map(it => <SidebarElement element={it}/>)
+                : projectMenu.map(it => <SidebarElement element={it}/>)
+            }
         </div>
     )
 }
+
+const projectMenu = [
+    { name: "Создать проект", items: [], link: "/create" },
+    { name: "Открыть проект", items: [], link: "/open" }
+]
 
 const sidebarMenu = [
     {
@@ -46,7 +56,9 @@ const sidebarMenu = [
     {name: "Финансирование", items: [ {name: "Заголовок"} ], link: "/finance"},
     {name: "Результаты", items: [ {name: "Заголовок"} ], link: "/results"},
     {name: "Анализ проекта", items: [ {name: "Заголовок"} ], link: "/analysis"},
-    {name: "Актуализация", items: [ {name: "Заголовок"} ], link: "/actualizing"}
+    {name: "Актуализация", items: [ {name: "Заголовок"} ], link: "/actualizing"},
+    {name: "Закрыть проект", items: [], link: "/close"}
+
 ]
 
 export default SideBar;
