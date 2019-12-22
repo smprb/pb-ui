@@ -6,7 +6,9 @@ const initialState = {
 
 const projectReducer = (state = initialState, action) => {
     if (action.type === OPEN_PROJECT) {
-        return !state.opened;
+        return {
+            opened: !state.opened
+        };
     }
     return state;
 }

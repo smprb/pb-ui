@@ -1,9 +1,9 @@
-export const projectMenu = [
+const projectMenu = [
     { name: "Создать проект", items: [], link: "create" },
-    { name: "Открыть проект", items: [], link: "open" }
+    { name: "Открыть проект", items: [], link: "/open" }
 ]
 
-export const sidebarMenu = [
+const sidebarMenu = [
     {
         name: "Проект",
         items: [
@@ -24,6 +24,11 @@ export const sidebarMenu = [
     {name: "Результаты", items: [ {name: "Заголовок"} ], link: "/results"},
     {name: "Анализ проекта", items: [ {name: "Заголовок"} ], link: "/analysis"},
     {name: "Актуализация", items: [ {name: "Заголовок"} ], link: "/actualizing"},
-    {name: "Закрыть проект", items: [], link: "close"}
+    {name: "Закрыть проект", items: [], link: "/close"}
 
 ]
+
+export const sidebar = {
+    projectMenu: projectMenu,
+    sidebarMenu: sidebarMenu
+}

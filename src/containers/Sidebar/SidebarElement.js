@@ -1,27 +1,30 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import styles from "./Sidebar.module.sass";
+import { connect } from "react-redux";
 
 const SidebarElement = (props) => {
     const { name, items, link } = props.element;
-    const openProject = props.openProject;
-    const [isItemShowing, toggleItem] = useState(false);
-    let click = () => toggleItem(!isItemShowing);
-
-    if (link === "open" || link === "close") {
-        click = () => openProject;
-    }
+    const { opened, openProject } = props;
+    const [ isItemShowing, toggleItem ] = useState(false);
 
     return <div>
         <Link to={ link } style={{ textDecoration: 'none' }}>
-            <div className={styles.sidebarItem} onClick={ click }>
+            <div className={ styles.sidebarItem } onClick={
+                () => {
+                    toggleItem(!isItemShowing);
+                    if (link === "/close" || link === "/open") openProject(!opened);
+                }
+            }>
                 {name}
             </div>
         </Link>
         {isItemShowing &&
-            items.map(it => <div className={styles.sidebarChildItem} children={it.name} />)
+            items.map(it => <div className={ styles.sidebarChildItem } children={ it.name } />)
         }
     </div>
 }
 
-export default SidebarElement;
+const mapStateToProps = state => ({ opened: state.opened });
+
+export default connect(mapStateToProps)(SidebarElement);
