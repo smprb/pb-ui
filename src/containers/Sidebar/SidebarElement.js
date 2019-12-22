@@ -8,14 +8,14 @@ const SidebarElement = (props) => {
     const { opened, openProject } = props;
     const [ isItemShowing, toggleItem ] = useState(false);
 
+    let toggleElement = () => {
+        toggleItem(!isItemShowing);
+        if (link === "/close" || link === "/open") openProject(!opened);
+    };
+
     return <div>
         <Link to={ link } style={{ textDecoration: 'none' }}>
-            <div className={ styles.sidebarItem } onClick={
-                () => {
-                    toggleItem(!isItemShowing);
-                    if (link === "/close" || link === "/open") openProject(!opened);
-                }
-            }>
+            <div className={ styles.sidebarItem } onClick={ toggleElement }>
                 {name}
             </div>
         </Link>
@@ -23,7 +23,7 @@ const SidebarElement = (props) => {
             items.map(it => <div className={ styles.sidebarChildItem } children={ it.name } />)
         }
     </div>
-}
+};
 
 const mapStateToProps = state => ({ opened: state.opened });
 
