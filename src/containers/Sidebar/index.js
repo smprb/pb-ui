@@ -9,8 +9,10 @@ const SideBar = ({ opened, openProject }) => {
     return (
         <div className={ styles.sidebar }>
             {opened
-                ? sidebar.sidebarMenu.map(it => <SidebarElement element={ it } openProject={ openProject } />)
-                : sidebar.projectMenu.map(it => <SidebarElement element={ it } openProject={ openProject } />)
+                ? sidebar.sidebarMenu.map((it, index) =>
+                    <SidebarElement key={index} element={ it } openProject={ openProject } />)
+                : sidebar.projectMenu.map((it, index) =>
+                    <SidebarElement key={index} element={ it } openProject={ openProject } />)
             }
         </div>
     )

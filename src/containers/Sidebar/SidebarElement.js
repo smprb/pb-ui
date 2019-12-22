@@ -8,7 +8,7 @@ const SidebarElement = (props) => {
     const { opened, openProject } = props;
     const [ isItemShowing, toggleItem ] = useState(false);
 
-    let toggleElement = () => {
+    const toggleElement = () => {
         toggleItem(!isItemShowing);
         if (link === "/close" || link === "/open") openProject(!opened);
     };
@@ -20,7 +20,7 @@ const SidebarElement = (props) => {
             </div>
         </Link>
         {isItemShowing &&
-            items.map(it => <div className={ styles.sidebarChildItem } children={ it.name } />)
+            items.map((it, index) => <div key={index} className={ styles.sidebarChildItem } children={ it.name } />)
         }
     </div>
 };
