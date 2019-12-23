@@ -1,38 +1,5 @@
-import React, {useState} from 'react';
-import styles from './Sidebar.module.sass';
-import {Link} from "react-router-dom";
-
-const SidebarElement = (props) => {
-    const { name, items, link } = props.element;
-    const [isItemShowing, toggleItem] = useState(false);
-
-    return <div>
-        <Link to={link} style={{ textDecoration: 'none' }}>
-            <div className={styles.sidebarItem} onClick={() => toggleItem(!isItemShowing)}>
-                {name}
-            </div>
-        </Link>
-        {isItemShowing &&
-            items.map(it => <div className={styles.sidebarChildItem} children={it.name} />)
-        }
-    </div>
-}
-
-const SideBar = () => {
-    const isProjectOpened = true; // todo here needs global store
-
-    return (
-        <div className={styles.sidebar}>
-            {isProjectOpened
-                ? sidebarMenu.map(it => <SidebarElement element={it}/>)
-                : projectMenu.map(it => <SidebarElement element={it}/>)
-            }
-        </div>
-    )
-}
-
 const projectMenu = [
-    { name: "Создать проект", items: [], link: "/create" },
+    { name: "Создать проект", items: [], link: "create" },
     { name: "Открыть проект", items: [], link: "/open" }
 ]
 
@@ -61,4 +28,7 @@ const sidebarMenu = [
 
 ]
 
-export default SideBar;
+export const sidebar = {
+    projectMenu: projectMenu,
+    sidebarMenu: sidebarMenu
+}
