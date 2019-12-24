@@ -3,8 +3,11 @@ import styles from "./Dashboard.module.sass";
 import Breadcrumb from "./Breadcrumb";
 import Footer from "./Footer";
 import { Route } from "react-router-dom";
+import api from "../../utils/api";
 
 const Dashboard = () => {
+    api.getSomeStuff({}).then((it) => console.log(it));
+
     return (
         <div className={styles.dashboardContent}>
             Dashboard
@@ -21,6 +24,6 @@ const Dashboard = () => {
             <Footer/>
         </div>
     )
-}
+};
 
 export default Dashboard;

@@ -1,5 +1,10 @@
 import axios from "axios";
 
-export default axios.create({
-    responseType: "json"
+const api = axios.create({
+    baseURL: '/api'
 });
+
+export default {
+    getSomeStuff: params => api.get('/stuff', params),
+    postSomeStuff: item => api.post('/stuf', item)
+}
