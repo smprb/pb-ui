@@ -1,5 +1,12 @@
 import React from 'react';
 import styles from './Header.module.sass';
+import {Link} from "react-router-dom";
+
+const linkStyle = {
+    textDecoration: 'none',
+    padding: '0 10px',
+    cursor: 'pointer'
+};
 
 const Brand = () => {
     return <div className={styles.brand}>
@@ -18,15 +25,15 @@ const SidebarToggler = (props) => {
 
 const NavigationBar = () => {
     return <div className={styles.navigation}>
-        <div>
+        <Link to={ "/project" } style={linkStyle}>
             Dashboard
-        </div>
-        <div>
-            Users
-        </div>
-        <div>
+        </Link>
+        <Link to={ "/profile" } style={linkStyle}>
+            Profile
+        </Link>
+        <Link to={ "/settings" } style={linkStyle}>
             Settings
-        </div>
+        </Link>
     </div>
 }
 
