@@ -1,25 +1,28 @@
-import React, { useState } from 'react';
-import styles from './App.module.sass';
-import Header from '../containers/Header';
-import Sidebar from '../containers/Sidebar';
-import Content from "../containers/Dashboard";
+import React from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
+import {connect} from "react-redux";
+import SignIn from "../admin/SignIn";
+import ApplicationContent from "./ApplicationContent";
+import {signOut} from "../actions";
 
-const App = () => {
-
-    const [isSidebarShow, setSidebarShow] = useState(true);
+const App = (props) => {
+    const { signed } = props;
 
     return (
         <Router>
-            <div>
-                <Header toggleSidebar={setSidebarShow} isSidebarShowing={isSidebarShow}/>
-                <div className={styles.app_content}>
-                    {isSidebarShow && <Sidebar/>}
-                    <Content/>
-                </div>
-            </div>
+            {signed
+                ? <ApplicationContent />
+                : <SignIn />
+            }
         </Router>
     )
-}
+};
 
-export default App
+const mapStateToProps = state => ({
+    signed: state.userReducer
+});
+const mapDispatchToProps = dispatch => ({
+    signOut: () => dispatch(signOut())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

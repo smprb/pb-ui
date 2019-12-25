@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Header.module.sass';
 import {Link} from "react-router-dom";
+import SignOut from "../../admin/SignOut";
 
 const linkStyle = {
     textDecoration: 'none',
@@ -24,7 +25,7 @@ const SidebarToggler = (props) => {
 }
 
 const NavigationBar = () => {
-    return <div className={styles.navigation}>
+    return <div>
         <Link to={ "/project" } style={linkStyle}>
             Dashboard
         </Link>
@@ -42,6 +43,7 @@ const Header = (props) => {
         <Brand />
         <SidebarToggler toggleSidebar={props.toggleSidebar} isSidebarShowing={props.isSidebarShowing}/>
         <NavigationBar />
+        <SignOut />
     </div>
 }
 

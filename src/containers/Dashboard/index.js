@@ -9,12 +9,12 @@ import Dashboard from "./Dashboard";
 import Settings from "../Settings";
 
 const Content = () => {
-    api.getSomeStuff({}).then((it) => console.log(it));
+    //api.getSomeStuff({}).then((it) => console.log(it));
 
     return (
         <div className={styles.dashboardContent}>
             <Breadcrumb />
-            <Dashboard/>
+            <Dashboard />
             <Route path="/profile"><Profile/></Route>
             <Route path="/settings"><Settings/></Route>
             <Footer />
