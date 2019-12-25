@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.module.sass';
 import {Link} from "react-router-dom";
-import SignOut from "../../admin/SignOut";
+import SignOut from "../admin/SignOut";
 
 const linkStyle = {
     textDecoration: 'none',

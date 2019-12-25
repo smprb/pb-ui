@@ -1,6 +1,5 @@
 import React from "react";
-import {Route} from "react-router-dom";
-import Profile from "../../admin/Profile";
+import { Route } from "react-router-dom";
 
 const Dashboard = () => {
     return (

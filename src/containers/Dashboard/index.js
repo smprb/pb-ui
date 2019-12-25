@@ -3,8 +3,7 @@ import styles from "./Dashboard.module.sass";
 import Breadcrumb from "./Breadcrumb";
 import Footer from "./Footer";
 import { Route } from "react-router-dom";
-import api from "../../utils/api";
-import Profile from "../../admin/Profile";
+import Profile from "../admin/Profile";
 import Dashboard from "./Dashboard";
 import Settings from "../Settings";
 

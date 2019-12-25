@@ -1,11 +1,12 @@
 import React from "react";
-import {signOut} from "../actions";
-import {connect} from "react-redux";
+import { signOut } from "../../actions";
+import { connect } from "react-redux";
 
 const style = {
     textDecoration: 'none',
     cursor: 'pointer',
-    marginLeft: 'auto'
+    marginLeft: 'auto',
+    marginRight: '25px'
 };
 
 const SignOut = ({ signOut }) => {
