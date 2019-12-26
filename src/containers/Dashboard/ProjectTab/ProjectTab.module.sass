@@ -1,0 +1,36 @@
+.container
+  margin: 1.5rem
+
+.container_element__header
+  display: flex
+
+.container_element
+  margin-top: -1px
+  margin-bottom: 1.5rem !important
+  background: white
+  border: 1px solid #c8ced3
+
+%active
+  background: white
+  border: 1px solid #c8ced3
+  border-bottom: white !important
+  border-radius: 5px 5px 0 0
+  margin: -1px
+
+%variant
+  padding: 10px
+  border-bottom: white
+  cursor: pointer
+  &:hover
+    @extend %active
+
+.variant_item__active
+  @extend %variant
+  @extend %active
+
+
+.variant_item__inactive
+  @extend %variant
+
+.variant_item__add
+  @extend %variant

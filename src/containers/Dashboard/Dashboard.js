@@ -1,10 +1,11 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import ProjectTab from "./ProjectTab";
 
 const Dashboard = () => {
     return (
         <div>
-            <Route path="/project">project</Route>
+            <Route path="/project"><ProjectTab/></Route>
             <Route path="/company">company</Route>
             <Route path="/environment">environment</Route>
             <Route path="/invest">invest</Route>
