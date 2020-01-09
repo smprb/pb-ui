@@ -3,27 +3,22 @@ import styles from "./Dashboard.module.sass";
 import Breadcrumb from "./Breadcrumb";
 import Footer from "./Footer";
 import { Route } from "react-router-dom";
-import api from "../../utils/api";
+import Profile from "../admin/Profile";
+import Dashboard from "./Dashboard";
+import Settings from "../Settings";
 
-const Dashboard = () => {
-    api.getSomeStuff({}).then((it) => console.log(it));
+const Content = () => {
+    //api.getSomeStuff({}).then((it) => console.log(it));
 
     return (
         <div className={styles.dashboardContent}>
-            Dashboard
-            <Breadcrumb/>
-            <Route path="/project">project</Route>
-            <Route path="/company">company</Route>
-            <Route path="/environment">environment</Route>
-            <Route path="/invest">invest</Route>
-            <Route path="/operation">operation</Route>
-            <Route path="/finance">finance</Route>
-            <Route path="/results">results</Route>
-            <Route path="/analysis">analysis</Route>
-            <Route path="/actualizing">actualizing</Route>
-            <Footer/>
+            <Breadcrumb />
+            <Dashboard />
+            <Route path="/profile"><Profile/></Route>
+            <Route path="/settings"><Settings/></Route>
+            <Footer />
         </div>
     )
 };
 
-export default Dashboard;
+export default Content;

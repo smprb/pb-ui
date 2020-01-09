@@ -10,7 +10,7 @@ const SidebarElement = (props) => {
 
     const toggleElement = () => {
         toggleItem(!isItemShowing);
-        if (link === "/close" || link === "/open") openProject(!opened);
+        if (link === "/close" || link === "/open") openProject(opened);
     };
 
     return <div>
@@ -25,6 +25,6 @@ const SidebarElement = (props) => {
     </div>
 };
 
-const mapStateToProps = state => ({ opened: state.opened });
+const mapStateToProps = state => ({ opened: state.projectReducer });
 
 export default connect(mapStateToProps)(SidebarElement);

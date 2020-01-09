@@ -1,16 +1,8 @@
-import { OPEN_PROJECT } from "../constants";
+import { combineReducers } from "redux";
+import userReducer from "./UserReducer";
+import projectReducer from "./ProjectReducer";
 
-const initialState = {
-    opened: true
-};
-
-const projectReducer = (state = initialState, action) => {
-    if (action.type === OPEN_PROJECT) {
-        return {
-            opened: !state.opened
-        };
-    }
-    return state;
-}
-
-export default projectReducer;
+export default combineReducers({
+    projectReducer,
+    userReducer
+})

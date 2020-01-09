@@ -18,7 +18,9 @@ const SideBar = ({ opened, openProject }) => {
     )
 }
 
-const mapStateToProps = state => ({ opened: state.opened });
+const mapStateToProps = state => ({
+    opened: state.projectReducer
+});
 
 const mapDispatchToProps = dispatch => ({
     openProject: opened => dispatch(openProject(opened))
