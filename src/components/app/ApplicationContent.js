@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import Header from "../containers/Header";
+import Header from "../../containers/Header";
 import styles from "./App.module.sass";
-import Sidebar from "../containers/Sidebar";
-import Content from "../containers/Dashboard";
+import Sidebar from "../../containers/Sidebar";
+import Content from "../../containers/Dashboard";
 
 const ApplicationContent = () => {
     const [isSidebarShow, setSidebarShow] = useState(true);
